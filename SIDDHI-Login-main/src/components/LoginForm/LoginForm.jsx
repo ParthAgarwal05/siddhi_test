@@ -128,7 +128,7 @@ const LoginForm = () => {
                     <label>
                         <input type="checkbox" /> Remember me
                     </label>
-                    <a href="#">Forgot password?</a>
+                    <Link to="/forgotpassword"> Forgot Password? </Link>
                 </div>
                 <button type="submit">Login</button>
                 <div className="register-link">
