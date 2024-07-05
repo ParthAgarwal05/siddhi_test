@@ -91,7 +91,7 @@ const History = () => {
         </div>
       </div>
       <div className='wrapperh'>
-        <table>
+        <table class="table-auto">
           <thead>
             <tr>
               <th>Filename</th>

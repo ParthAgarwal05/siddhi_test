@@ -94,6 +94,7 @@ const LoginForm = () => {
         } catch (error) {
             console.error('Error signing in:', error.message);
             setError('Invalid credentials'); // Set error message
+            setError(alert("Invalid credentials"))
         }
     };
 
@@ -131,16 +132,16 @@ const LoginForm = () => {
                     />
                     <FaLock className="icon" />
                 </div>
-                <div>
+                {/* <div>
                     {error && <warning>{error}</warning>}
-                </div>
+                </div> */}
                 <div className="remember-forgot">
                     <label>
                         <input type="checkbox" /> Remember me
                     </label>
                     <Link to="/forgotpassword"> Forgot Password? </Link>
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit" style={{ marginBottom: '10px' }}>Login</button>
                 <button onClick={logGoogleUser}>Sign in with Google</button>
                 <div className="register-link">
                     <p>Don't have an account? <Link to="/signup">Register</Link></p>

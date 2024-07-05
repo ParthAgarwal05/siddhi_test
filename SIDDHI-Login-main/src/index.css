@@ -16,9 +16,10 @@ body {
   align-items: center;
   min-width: 100vw;
   min-height: 100vh;
-  background: url('./components/assets/steven-hwg-zBsdRTHIIm4-unsplash.jpg') no-repeat;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1)), url('./components/assets/steven-hwg-zBsdRTHIIm4-unsplash.jpg') no-repeat;
   background-size: 100vw 100vh; /* Ensure height covers the viewport and width adjusts automatically */
   background-position: center;
+  backdrop-filter: blur(3px);
   padding: 5vw;
   margin: 0;
   overflow: hidden;
@@ -33,6 +34,7 @@ code {
   body {
     font-size: 4vw;
     padding: 10vw;
+    background-size: auto 100vh; /* Ensure height covers the viewport and width adjusts automatically */
   }
   
   .wrapperh {
@@ -53,6 +55,8 @@ code {
   body {
     font-size: 4vw;
     padding: 12vw;
+    background-size: auto 100vh; /* Ensure height covers the viewport and width adjusts automatically */
+    background-position: center;
   }
   
   .wrapperh {
