@@ -75,7 +75,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './LoginForm.css';
 import { FaLock, FaAt } from 'react-icons/fa';
-import { getAuthInstance } from '../../services/db';
+import { getAuthInstance, signInWithGooglePopup } from '../../services/db';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const LoginForm = () => {
@@ -97,7 +97,17 @@ const LoginForm = () => {
         }
     };
 
-    
+    const logGoogleUser = async (e) => {
+        e.preventDefault();
+        try {
+            const userCredential = await signInWithGooglePopup();
+            console.log('User logged in:', userCredential.user);
+            navigate('/dashboard'); // Redirect or perform actions after successful login
+        } catch (error) {
+            console.error('Error signing in:', error.message);
+            setError('Invalid credentials'); // Set error message
+        }
+    }
 
     return (
         <div className="wrapper">
@@ -131,6 +141,7 @@ const LoginForm = () => {
                     <Link to="/forgotpassword"> Forgot Password? </Link>
                 </div>
                 <button type="submit">Login</button>
+                <button onClick={logGoogleUser}>Sign in with Google</button>
                 <div className="register-link">
                     <p>Don't have an account? <Link to="/signup">Register</Link></p>
                 </div>
