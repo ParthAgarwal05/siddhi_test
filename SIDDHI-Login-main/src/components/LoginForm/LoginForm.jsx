@@ -136,9 +136,9 @@ const LoginForm = () => {
                     {error && <warning>{error}</warning>}
                 </div> */}
                 <div className="remember-forgot">
-                    <label>
+                    {/* <label>
                         <input type="checkbox" /> Remember me
-                    </label>
+                    </label> */}
                     <Link to="/forgotpassword"> Forgot Password? </Link>
                 </div>
                 <button type="submit" style={{ marginBottom: '10px' }}>Login</button>
