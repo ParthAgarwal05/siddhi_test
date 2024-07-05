@@ -29,6 +29,10 @@ td, th {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+tr:hover {
+    background-color: rgba(0, 104, 171, 0.5);
+}
+
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     td, th {
