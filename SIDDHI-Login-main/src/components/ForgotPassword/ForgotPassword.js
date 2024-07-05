@@ -8,13 +8,17 @@ import { getAuthInstance } from '../../services/db';
 function ForgotPassword() {
     const [email, setEmail] = useState('');
     const auth = getAuthInstance();
-    const handleSubmit = async(e) => {
-        sendPasswordResetEmail(auth, email).then(data => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        try {
+            await sendPasswordResetEmail(auth, email);
             alert("Check your email.");
-        }).catch(err=> {
+        } catch (err) {
             alert(err.code);
-        })
-    }
+        }
+    };
+    
     return (
         <div className="wrapper">
             <form onSubmit={handleSubmit}>
@@ -22,12 +26,12 @@ function ForgotPassword() {
                 <div className="input-box">
                     <input
                         type="text"
-                        placeholder="Email"
+                        placeholder="Enter email of registered account"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
-                    <button>Reset</button>
                 </div>
+                <button>Reset</button>
             </form>
         </div>
     );
