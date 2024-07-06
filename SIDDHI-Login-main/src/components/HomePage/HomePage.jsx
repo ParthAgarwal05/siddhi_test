@@ -73,7 +73,7 @@ const HomePage = () => {
         setError(null);
 
         try {
-            const res = await axios.post('http://localhost:8000/pred', formData, {
+            const res = await axios.post('http://104.211.117.234:8000/pred', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
