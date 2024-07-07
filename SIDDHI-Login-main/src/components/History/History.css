@@ -9,6 +9,8 @@
     padding: 2vw 4vw;
     width: 80vw; /* Maximum width for larger screens */
     margin: 0 auto; /* Center the wrapper horizontally */
+    overflow: auto;
+    max-height: 80vh;
 }
 
 table {
